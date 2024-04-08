@@ -10,7 +10,7 @@ import { LogLevel, PublicClientApplication } from "@azure/msal-browser";
 import { getUserData } from "./middle-tier-calls";
 import { showMessage } from "./message-helper";
 
-const clientId = "{application GUID here}"; //This is your client ID
+const clientId = "b17afa00-29ed-45e7-9d31-3226d4e18bf6"; //This is your client ID
 const accessScope = `api://${window.location.host}/${clientId}/access_as_user`;
 const loginRequest = {
   scopes: [accessScope],
@@ -21,7 +21,7 @@ const msalConfig = {
   auth: {
     clientId: clientId,
     authority: "https://login.microsoftonline.com/common",
-    redirectUri: "https://localhost:{PORT}/fallbackauthdialog.html", // Update config script to enable `https://${window.location.host}/fallbackauthdialog.html`,
+    redirectUri: "https://localhost:3000/fallbackauthdialog.html", // Update config script to enable `https://${window.location.host}/fallbackauthdialog.html`,
     navigateToLoginRequestUrl: false,
   },
   cache: {
